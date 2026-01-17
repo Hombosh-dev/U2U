@@ -1,0 +1,94 @@
+{
+  "user": {
+    "name": "Бавовнятко",
+    "email": "Bavovnyatko@gmail.com",
+    "avatar": "https://placekitten.com/200/200",
+    "savedChannels": [1, 2],
+    "addedChannels": [
+      { "id": 1, "name": "Melior Max", "status": "added" },
+      { "id": 99, "name": "My Channel", "status": "moderation" }
+    ]
+  },
+  "categories": [
+    { "id": 1, "name": "Англійська мова", "icon": "🇺🇸", "count": 63 },
+    { "id": 2, "name": "Ігрові світи та лор", "icon": "🎮", "count": 1477 },
+    { "id": 3, "name": "Книги", "icon": "📚", "count": 126 },
+    { "id": 4, "name": "Трукрайм", "icon": "👮", "count": 126 },
+    { "id": 5, "name": "Аніме", "icon": "🌸", "count": 106 },
+    { "id": 6, "name": "Шортси", "icon": "⚡", "count": 500 },
+    { "id": 7, "name": "Новини", "icon": "📰", "count": 287 },
+    { "id": 8, "name": "Навчання", "icon": "🎓", "count": 126 },
+    { "id": 9, "name": "Летсплеї", "icon": "🕹️", "count": 461 },
+    { "id": 10, "name": "Подорожі", "icon": "✈️", "count": 112 },
+    { "id": 11, "name": "Гумор", "icon": "😂", "count": 190 },
+    { "id": 12, "name": "Кіно", "icon": "🎥", "count": 541 }
+  ],
+  "channels": [
+    {
+      "id": "1",
+      "name": "Melior Max",
+      "category": "Ігри, Летсплеї",
+      "subscribers": "45.1 тис.",
+      "videos": 957,
+      "rating": 4.8,
+      "description": "Привіт мене звати Макс і я роблю летсплеї українською на моєму каналі...",
+      "fullDescription": "Привіт мене звати Макс і я роблю летсплеї українською на моєму каналі. Ось деяка інфа по моєму обладнанню: Стрім ПК...",
+      "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=Max",
+      "banner": "https://placehold.co/600x200/207CD3/FFFFFF?text=Melior+Max+Banner",
+      "youtubeLink": "https://youtube.com",
+      "comments": [
+        { "id": 101, "user": "Ikki", "text": "Файний канал із проходженням цікавих ігор...", "rating": 5, "date": "1 місяць тому" },
+        { "id": 102, "user": "Булка", "text": "Файний Канал мені дуже подобається )", "rating": 5, "date": "2 місяці тому" }
+      ],
+      "recommendedVideos": [
+        { "id": 201, "title": "НОВИЙ СТАЛКЕР, НАРЕШТІ", "image": "https://placehold.co/160x90" },
+        { "id": 202, "title": "ОСЬ НАРЕШТІ Five Nights", "image": "https://placehold.co/160x90" }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "thetremba",
+      "category": "Ігри, Летсплеї, Стріми",
+      "subscribers": "116 тис.",
+      "videos": 455,
+      "rating": 4.9,
+      "description": "можна просто Тремба. ми тут проходимо всі ігрові новинки...",
+      "fullDescription": "можна просто Тремба. ми тут проходимо всі ігрові новинки, інді ігри та в перервах між новими релізами згадуємо класику...",
+      "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=Tremba",
+      "banner": "https://placehold.co/600x200/E42E21/FFFFFF?text=Tremba+Banner",
+      "youtubeLink": "https://youtube.com",
+      "comments": [],
+      "recommendedVideos": []
+    },
+    {
+        "id": "3",
+        "name": "Загін Кіноманів",
+        "category": "Кіно, Огляди",
+        "subscribers": "693 тис.",
+        "videos": 298,
+        "rating": 4.8,
+        "description": "🔥QTV ДЛЯ НОВОГО ПОКОЛІННЯ🔥 Автор каналу - Віталік Гордієнко...",
+        "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=Cinema"
+    },
+    {
+        "id": "4",
+        "name": "ATOMICPROD",
+        "category": "Подорожі, Лайфстайл",
+        "subscribers": "17,4 тис.",
+        "videos": 10,
+        "rating": 4.4,
+        "description": "Радий вітати на своєму каналі - тут зможете побачити незвичайний контент.",
+        "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=Atomic"
+    },
+    {
+        "id": "5",
+        "name": "Volnyckyi",
+        "category": "Стріми, Ігри",
+        "subscribers": "23 тис.",
+        "videos": 251,
+        "rating": 3.8,
+        "description": "Це авторський український канал про комп'ютерні ігри в жанрі FPS.",
+        "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=Volnyckyi"
+    }
+  ]
+}
