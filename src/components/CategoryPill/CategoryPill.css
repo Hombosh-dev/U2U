@@ -31,4 +31,21 @@
 
 .category-pill.expanded {
   width: 100%;
+  padding: 12px 24px 12px 20px;
+  background-color: var(--gray-50);
+  justify-content: space-between;
+}
+
+.category-pill-content-expanded {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+
+.cat-video-count {
+  color: var(--blue-600);
+  font-size: 16px;
+  font-weight: 600;
+  word-wrap: break-word;
 }
