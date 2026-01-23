@@ -5,9 +5,13 @@ import Footer from './components/Footer/Footer';
 function App() {
   const [isAuth, setIsAuth] = useState(false);
 
+  const handleLogout = () => {
+    setIsAuth(false);
+  };
+
   return (
     <div className="App">
-      <Header isAuth={isAuth} />
+      <Header isAuth={isAuth} onLogout={handleLogout} />
       <main style={{ minHeight: '80vh', padding: '40px 24px' }}>
         <h1>Головна сторінка</h1>
         <p>Поточний статус: <strong>{isAuth ? 'Користувач авторизований' : 'Гість'}</strong></p>
