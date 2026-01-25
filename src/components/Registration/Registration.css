@@ -1,0 +1,425 @@
+.regOverlay {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+  background: rgba(0, 0, 0, 0.5);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  z-index: 1000;
+}
+
+.regCard {
+  width: 360px;
+  max-width: 92vw;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 10px 35px rgba(15, 23, 42, 0.14);
+  position: relative;
+  overflow: hidden;
+}
+
+.regCard button,
+.regCard input {
+  font: inherit;
+  visibility: visible;
+  opacity: 1;
+}
+
+
+.regClose {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+
+  width: 36px;
+  height: 36px;
+
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background: transparent;
+
+  display: grid;
+  place-items: center;
+
+  cursor: pointer;
+  z-index: 10;
+
+  transform: none !important;
+}
+
+.regCloseIcon {
+  display: block;
+  line-height: 1;
+  font-size: 26px;
+  font-weight: 900;
+  color: #0b3a7a;
+  transform: translateY(-1px);
+  pointer-events: none;
+}
+
+.regClose:hover {
+  opacity: 0.9;
+}
+
+.regBody {
+  padding: 18px 16px 14px 16px;
+  display: flex;
+  flex-direction: column;
+  height: 640px;
+  box-sizing: border-box;
+}
+
+/* Slider */
+.regViewport {
+  overflow: hidden;
+  width: 100%;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+.regTrack {
+  display: flex;
+  width: 300%;
+  height: 100%;
+  transition: transform 260ms ease;
+}
+
+.regSlide {
+  width: 100%;
+  flex: 0 0 100%;
+  height: 100%;
+  display: flex;
+}
+
+/* Bottom area */
+.regBottomArea {
+  padding-top: 10px;
+}
+
+.regDots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.regDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: #c9d6e8;
+}
+.regDot.active {
+  background: #2f7ee6;
+}
+
+.regFooterInfo {
+  margin-top: 10px;
+  font-size: 12.5px;
+  text-align: center;
+  color: #475569;
+}
+.regFooterInfo.good {
+  color: #0b3a7a;
+  font-weight: 700;
+}
+
+/* Step layout */
+.regStep {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.regStepHeader {
+  flex: 0 0 auto;
+}
+.regStepContent {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: hidden;
+  padding-bottom: 10px;
+}
+.regStepActions {
+  flex: 0 0 auto;
+  padding-top: 6px;
+}
+
+/* Common UI */
+.regTitle {
+  margin: 0 0 10px 0;
+  font-size: 22px;
+  font-weight: 800;
+  color: #0b3a7a;
+}
+
+.regInfoBox {
+  width: 320px;
+  max-width: 100%;
+  box-sizing: border-box;
+
+  background: #d9ecff;
+  color: #29465e;
+  border-radius: 10px;
+  padding: 12px;
+
+  font-size: 12.5px;
+  line-height: 1.4;
+
+  margin-bottom: 10px;
+
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.regLabel {
+  display: block;
+  font-size: 12.5px;
+  color: #0f172a;
+  margin: 10px 0 6px;
+  font-weight: 700;
+}
+
+.regInput {
+  width: 320px;
+  max-width: 100%;
+  box-sizing: border-box;
+  height: 40px;
+  border-radius: 8px;
+  border: 2px solid #b6d5ff;
+  padding: 0 12px;
+  outline: none;
+  font-size: 13.5px;
+  color: #0f172a;
+  background: #ffffff;
+}
+
+.regInput:focus {
+  border-color: #2f7ee6;
+  box-shadow: 0 0 0 3px rgba(47, 126, 230, 0.12);
+}
+
+.regPrimaryBtn {
+  width: 320px;
+  max-width: 100%;
+  height: 46px;
+  border: 0;
+  border-radius: 10px;
+  background: #2f7ee6;
+  color: #ffffff !important;
+  font-weight: 800;
+  font-size: 15px !important;
+  cursor: pointer;
+  margin-top: 12px;
+  display: inline-block;
+}
+
+.regPrimaryBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.regBottomText {
+  text-align: center;
+  font-size: 12.5px;
+  color: #0f172a;
+  margin-top: 10px;
+}
+
+.regLink {
+  color: #2f7ee6;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+/* Search */
+.regSearchWrap {
+  position: relative;
+  width: 320px;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.regSearch {
+  width: 320px;
+  max-width: 100%;
+  box-sizing: border-box;
+  height: 42px;
+  border-radius: 10px;
+  border: 2px solid #e6eef9;
+  padding: 0 38px 0 12px;
+  font-size: 13.5px;
+  outline: none;
+  background: #f2f6fd;
+  color: #0f172a;
+}
+
+.regSearchIcon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.65;
+  font-size: 14px;
+}
+
+/* Step2: chips scroll */
+.regScrollArea {
+  margin-top: 12px;
+  width: 320px;
+  max-width: 100%;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 10px;
+  overflow: auto;
+  box-shadow: inset 0 0 0 2px #e7f0ff;
+  flex: 1 1 auto;
+  min-height: 0;
+  max-height: 100%;
+}
+
+.regScrollArea::-webkit-scrollbar {
+  width: 6px;
+}
+.regScrollArea::-webkit-scrollbar-thumb {
+  background: #2f7ee6;
+  border-radius: 999px;
+}
+
+.regChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.regChip {
+  border: 0;
+  background: #edf2f9;
+  color: #0f172a;
+  height: 32px;
+  padding: 0 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.regChip.active {
+  background: #d9ecff;
+  box-shadow: inset 0 0 0 2px #2f7ee6;
+}
+
+.regBottomRow {
+  display: flex;
+  justify-content: space-between;
+  width: 320px;
+  max-width: 100%;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.regBottomRow.single {
+  justify-content: flex-start;
+}
+
+.regTextBtn,
+.regSkipBtn {
+  border: 0;
+  background: transparent;
+  color: #2f7ee6;
+  font-weight: 800;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 0;
+}
+
+/* Step3: list scroll */
+.regList {
+  margin-top: 12px;
+  width: 320px;
+  max-width: 100%;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-right: 4px;
+  flex: 1 1 auto;
+  min-height: 0;
+  max-height: 100%;
+}
+
+.regList::-webkit-scrollbar {
+  width: 6px;
+}
+.regList::-webkit-scrollbar-thumb {
+  background: #2f7ee6;
+  border-radius: 999px;
+}
+
+.regChannelRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: inset 0 0 0 2px #d7e8ff;
+  padding: 10px;
+}
+
+.regChannelLeft {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  min-width: 0;
+}
+
+.regAvatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  background: #e9eef8;
+  flex: 0 0 auto;
+}
+
+.regChannelText {
+  min-width: 0;
+}
+
+.regChannelName {
+  font-weight: 900;
+  color: #0b3a7a;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 190px;
+}
+
+.regChannelMeta {
+  font-size: 12px;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+.regPlusBtn {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  border: 0;
+  background: transparent;
+  font-size: 22px;
+  cursor: pointer;
+  color: #0f172a;
+  opacity: 0.9;
+}
+
+.regScrollArea,
+.regList {
+  margin-bottom: 8px;
+}
