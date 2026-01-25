@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Header.css';
 import logoTwo from '../../assets/icons/logo.svg';
 import userIconSvg from '../../assets/icons/user.svg';
@@ -39,11 +40,11 @@ const Header = ({ isAuth, onLogout }) => {
     <>
       <header className="header">
         <div className="header-left">
-          <div className="logo">
+          <Link to="/" className="logo">
             <span className="logo-text">U</span>
             <img src={logoTwo} alt="2" className="logo-img" />
             <span className="logo-text">U</span>
-          </div>
+          </Link>
 
           <div className="header-search-desktop">
             <input type="text" className="search-input" />
@@ -59,9 +60,9 @@ const Header = ({ isAuth, onLogout }) => {
 
         <div className="header-right">
           <nav className="desktop-nav">
-            <a href="#" className="nav-link">Добірки</a>
-            <a href="#" className="nav-link">AI помічник</a>
-            <a href="#" className="nav-link">Про проєкт</a>
+            <Link to="#" className="nav-link">Добірки</Link>
+            <Link to="#" className="nav-link">AI помічник</Link>
+            <Link to="/about" className="nav-link">Про проєкт</Link>
           </nav>
 
           {isAuth ? (
@@ -71,8 +72,8 @@ const Header = ({ isAuth, onLogout }) => {
           ) : (
             <>
               <div className="auth-buttons-desktop">
-                <a href="#" className="auth-link">Вхід</a>
-                <a href="#" className="auth-link">Реєстрація</a>
+                <Link to="#" className="auth-link">Вхід</Link>
+                <Link to="#" className="auth-link">Реєстрація</Link>
               </div>
 
               <button className="icon-btn mobile-only">
