@@ -1,6 +1,5 @@
 .accordion-wrapper {
   width: 100%;
-  max-width: 344px;
   background: var(--blue-50);
   border-radius: var(--radius-md);
   overflow: hidden;
