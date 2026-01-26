@@ -1,7 +1,7 @@
 import React from 'react';
 import './ChannelCard.css';
 
-const ChannelCard = ({ channel }) => {
+const ChannelCard = ({ channel, hasLink = true }) => {
   if (!channel) return null;
 
   return (
@@ -52,12 +52,14 @@ const ChannelCard = ({ channel }) => {
         </p>
       </div>
 
-      <a href={channel.youtubeLink || "#"} className="card-link">
-        Переглянути інформацію
-        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M7 5L11 9L7 13" stroke="#4FA1ED" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
-      </a>
+      {hasLink && (
+        <a href={channel.youtubeLink || "#"} className="card-link">
+          Переглянути інформацію
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 5L11 9L7 13" stroke="#4FA1ED" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </a>
+      )}
     </div>
   );
 };

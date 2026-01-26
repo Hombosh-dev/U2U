@@ -1,0 +1,143 @@
+.sidemenu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 2000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.sidemenu-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.sidemenu-panel {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100%;
+  background: white;
+  z-index: 2001;
+  padding: 24px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: right 0.3s ease-in-out;
+}
+
+.sidemenu-overlay.open .sidemenu-panel {
+  right: 0;
+}
+
+.sidemenu-header {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 32px;
+}
+
+.sidemenu-close-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.sidemenu-user-section, .sidemenu-login-section {
+  display: flex;
+  align-items: center;
+  padding: 12px 24px;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  color: var(--blue-900);
+}
+
+.sidemenu-user-section {
+  background-color: var(--blue-100);
+}
+
+.sidemenu-login-section {
+  background-color: var(--blue-500);
+  color: white;
+}
+
+.sidemenu-user-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  margin-right: 16px;
+  object-fit: cover;
+}
+
+.sidemenu-user-name {
+  font-weight: 700;
+  font-size: 18px;
+  flex-grow: 1;
+}
+
+.sidemenu-user-avatar.sidemenu-user-avatar-placeholder {
+  background-color: var(--gray-200);
+  padding: 8px;
+  box-sizing: border-box;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+.sidemenu-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.sidemenu-nav-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  background-color: var(--gray-50);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  color: var(--blue-900);
+  font-weight: 600;
+}
+
+.sidemenu-footer {
+  margin-top: auto;
+}
+
+.sidemenu-logout-btn {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 12px 24px;
+  background: none;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--blue-900);
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.sidemenu-logout-btn .icon {
+  margin-left: auto;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+}
+
+@media (min-width: 768px) {
+  .sidemenu-panel {
+    width: 380px;
+  }
+}
