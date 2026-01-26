@@ -7,6 +7,8 @@ import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import './App.css';
 
+import Compilations from './pages/Compilations/Compilations';
+
 const App = () => {
   const [isAuth, setIsAuth] = useState(false);
 
@@ -22,6 +24,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home isAuth={isAuth} setIsAuth={setIsAuth} />} />
           <Route path="/about" element={<About />} />
+          <Route path="/compilations" element={<Compilations />} />
         </Routes>
       </main>
       
