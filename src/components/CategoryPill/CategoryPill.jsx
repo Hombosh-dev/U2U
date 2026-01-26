@@ -1,12 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './CategoryPill.css';
 
-const CategoryPill = ({ icon, name, expanded = false, to = '#', videoCount }) => {
+const CategoryPill = ({ icon, name, expanded = false, videoCount }) => {
   const componentClasses = `category-pill ${expanded ? 'expanded' : ''}`;
 
   return (
-    <Link to={to} className={componentClasses}>
+    <div className={componentClasses}>
       {expanded ? (
         <>
           <div className="category-pill-content-expanded">
@@ -21,7 +20,7 @@ const CategoryPill = ({ icon, name, expanded = false, to = '#', videoCount }) =>
           <span className="cat-name">{name}</span>
         </>
       )}
-    </Link>
+    </div>
   );
 };
 

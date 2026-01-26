@@ -30,7 +30,6 @@
 }
 
 .category-pill.expanded {
-  width: 100%;
   padding: 12px 24px 12px 20px;
   background-color: var(--gray-50);
   justify-content: space-between;

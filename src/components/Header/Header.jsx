@@ -60,7 +60,7 @@ const Header = ({ isAuth, onLogout }) => {
 
         <div className="header-right">
           <nav className="desktop-nav">
-            <Link to="#" className="nav-link">Добірки</Link>
+            <Link to="/compilations" className="nav-link">Добірки</Link>
             <Link to="#" className="nav-link">AI помічник</Link>
             <Link to="/about" className="nav-link">Про проєкт</Link>
           </nav>
