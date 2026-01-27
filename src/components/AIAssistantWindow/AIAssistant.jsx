@@ -25,7 +25,6 @@ function AIAssistant({ open, onClose, onSend, onTemplate }) {
 
   const handleTemplate = (t) => {
     if (onTemplate) onTemplate(t);
-    // опціонально підставляємо в інпут
     setText(t.label.replace("*", ""));
   };
 

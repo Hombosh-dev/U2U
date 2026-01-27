@@ -9,6 +9,7 @@ function StepAccount({
   setPassword,
   onNext,
   canNext,
+  onOpenLogin,
 }) {
   return (
     <div className="regStep">
@@ -54,7 +55,18 @@ function StepAccount({
         </button>
 
         <div className="regBottomText">
-          Вже є акаунт? <a className="regLink" href="/login">Увійти</a>
+          Вже є акаунт?{" "}
+          <button
+            type="button"
+            className="regTextBtn"
+            onClick={() => {
+              console.log("[REGISTER] User clicked 'Увійти' from StepAccount.");
+              if (onOpenLogin) onOpenLogin();
+            }}
+            style={{ fontWeight: 900 }}
+          >
+            Увійти
+          </button>
         </div>
       </div>
     </div>

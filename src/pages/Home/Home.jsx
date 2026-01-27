@@ -80,7 +80,7 @@ const Home = ({ isAuth, setIsAuth }) => {
       <section className="channels-section">
         <div className="section-header">
             <h2>Ютуб-канали</h2>
-            <Link to="#">переглянути всі</Link>
+            <Link to="/channels">переглянути всі</Link>
         </div>
         <div className="tabs">
             <button 

@@ -1,82 +1,113 @@
-import React, { useState } from 'react';
-import './LogInPanel.css';
+import React, { useState } from "react";
+import "./LogInPanel.css";
+import youtubeIcon from "../../assets/icons/youtube_3.svg"; // ✅ твій svg
 
-const LogInPanel = ({ onLogin, onClose, onOpenRegister, isOpen = true }) => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+function LogInPanel({ onLogin, onClose, onOpenRegister, isOpen = true }) {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onLogin({ email, password });
+
+    console.log("[LOGIN] User clicked 'Увійти' (demo login).", { email, password });
+    if (onLogin) onLogin({ email, password });
+    if (onClose) onClose();
+  };
+
+  const handleOpenRegister = () => {
+    console.log("[LOGIN] User clicked 'Зареєструватись' -> open Registration.");
+    if (onClose) onClose();
+    if (onOpenRegister) onOpenRegister();
   };
 
   if (!isOpen) return null;
 
   return (
-    <div className="modal-overlay">
-      <div className="modal-content">
-        <div className="header-row">
-          <h2 className="login-title">Вхід</h2>
-          <button className="close-btn" onClick={onClose}>×</button>
-        </div>
+    <div className="loginOverlay" onMouseDown={onClose}>
+      <div className="loginCard" onMouseDown={(e) => e.stopPropagation()}>
+        <button className="loginClose" type="button" onClick={onClose} aria-label="Close">
+          <span className="loginCloseIcon">×</span>
+        </button>
 
-        <div className="youtube-section">
-          <p><b>Увійдіть за допомогою YouTube</b> та отримайте більше персоналізованих пропозицій!</p>
-          <button className="youtube-btn">
-            <span className="youtube-icon">▶</span> Увійти через YouTube
+        <h2 className="loginTitle">Вхід</h2>
+
+        <div className="loginInfoBox">
+          <div className="loginInfoText">
+            <b>Увійдіть за допомогою YouTube</b> та отримайте більше персоналізованих пропозицій!
+          </div>
+
+          <button
+            className="loginYoutubeBtn"
+            type="button"
+            onClick={() => console.log("[LOGIN] YouTube button clicked (demo).")}
+          >
+            <img className="loginYoutubeIcon" src={youtubeIcon} alt="YouTube" />
+            Увійти через YouTube
           </button>
         </div>
 
         <form onSubmit={handleSubmit}>
-          <label htmlFor="email">Email</label>
+          <label className="loginLabel" htmlFor="loginEmail">Email</label>
           <input
-            id="email"
+            id="loginEmail"
+            className="loginInput"
             type="email"
-            placeholder="Ваша електронна пошта"
+            placeholder="Ваша електронна пошта."
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            required
           />
 
-          <label htmlFor="password">Пароль</label>
+          <label className="loginLabel" htmlFor="loginPassword">Пароль</label>
           <input
-            id="password"
+            id="loginPassword"
+            className="loginInput"
             type="password"
-            placeholder="Ваш пароль"
+            placeholder="Ваш пароль."
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            required
           />
 
-          <a href="#" className="forgot-link">Забули пароль?</a>
+          <button
+            className="loginForgot"
+            type="button"
+            onClick={() => console.log("[LOGIN] Forgot password clicked (demo).")}
+          >
+            Забули пароль?
+          </button>
 
-          <div className="social-login">
-            <span className="social-text">Або увійдіть через</span>
-            <div className="social-buttons">
-              <button className="google-btn" title="Увійти через Google" type="button">
-                <span className="google-icon">G</span>
+          <div className="loginSocial">
+            <div className="loginSocialText">Або увійдіть через</div>
+            <div className="loginSocialBtns">
+              <button
+                type="button"
+                className="loginSocialBtn"
+                onClick={() => console.log("[LOGIN] Google clicked (demo).")}
+                aria-label="Google"
+              >
+                G
               </button>
-              <button className="facebook-btn" title="Увійти через Facebook" type="button">
-                <span className="facebook-icon">f</span>
+              <button
+                type="button"
+                className="loginSocialBtn"
+                onClick={() => console.log("[LOGIN] Facebook clicked (demo).")}
+                aria-label="Facebook"
+              >
+                f
               </button>
             </div>
           </div>
 
-          <button type="submit" className="login-btn"><b>Увійти</b></button>
+          <button type="submit" className="loginPrimaryBtn">
+            Увійти
+          </button>
         </form>
 
-        <button
-          className="register-link"
-          onClick={() => {
-            onClose();
-            onOpenRegister();
-          }}
-        >
-          <b>Зареєструватись</b>
+        <button type="button" className="loginRegisterBtn" onClick={handleOpenRegister}>
+          Зареєструватись
         </button>
       </div>
     </div>
   );
-};
+}
 
 export default LogInPanel;

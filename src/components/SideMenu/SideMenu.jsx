@@ -14,7 +14,7 @@ const LogoutIcon = () => (
 
 import UserPlaceholderIcon from '../../assets/icons/user.svg';
 
-const SideMenu = ({ isOpen, isAuth, user, onClose, onLogout }) => {
+const SideMenu = ({ isOpen, isAuth, user, onClose, onLogout, onOpenLogin }) => {
   if (!isOpen) {
     return null;
   }
@@ -48,10 +48,17 @@ const SideMenu = ({ isOpen, isAuth, user, onClose, onLogout }) => {
               <ArrowIcon />
             </Link>
           ) : (
-            <Link to="/login" className="sidemenu-login-section" onClick={onClose}>
+            <button
+              type="button"
+              className="sidemenu-login-section"
+              onClick={() => {
+                onClose();
+                if (onOpenLogin) onOpenLogin();
+              }}
+            >
               <span className="sidemenu-user-name">Вхід в акаунт</span>
               <ArrowIcon />
-            </Link>
+            </button>
           )}
 
           <nav className="sidemenu-nav">

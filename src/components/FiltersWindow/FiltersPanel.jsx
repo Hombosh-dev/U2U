@@ -80,7 +80,6 @@ function FiltersPanel({
 
   return (
     <>
-      {/* Прозорий overlay: фон НЕ змінюємо, тільки закриття по кліку поза панеллю */}
       <div className="fltOverlay" onMouseDown={onClose} />
 
       <div
@@ -97,9 +96,7 @@ function FiltersPanel({
           </button>
         </div>
 
-        {/* ✅ Скрол-зона: саме тут “вибори”, щоб панель не роздувалась */}
         <div className="fltContent">
-          {/* ТЕМАТИКА */}
           <div className="fltSection">
             <div className="fltSectionTitle">Тематка</div>
 
@@ -121,7 +118,6 @@ function FiltersPanel({
             </div>
           </div>
 
-          {/* МОВА */}
           <div className="fltSection">
             <div className="fltSectionTitle">Мова</div>
 
@@ -144,7 +140,6 @@ function FiltersPanel({
             </label>
           </div>
 
-          {/* ТРИВАЛІСТЬ */}
           <div className="fltSection">
             <div className="fltSectionTitle">Тривалість відео (в середньому)</div>
 
@@ -177,7 +172,6 @@ function FiltersPanel({
           </div>
         </div>
 
-        {/* кнопки — поза скролом */}
         <button type="button" className="fltApply" onClick={handleApply}>
           Показати {resultsCount} каналів
         </button>

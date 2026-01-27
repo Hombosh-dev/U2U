@@ -6,7 +6,6 @@
   z-index:1100;
 }
 
-/* panel */
 .fltPanel{
   position:fixed;
   top: 30px;
@@ -28,7 +27,6 @@
   box-sizing:border-box;
 }
 
-/* header */
 .fltHeader{
   display:flex;
   align-items:center;
@@ -42,7 +40,6 @@
   color: var(--blue-900);
 }
 
-/* close */
 .fltClose{
   width:30px;
   height:30px;
@@ -62,7 +59,6 @@
   pointer-events:none;
 }
 
-/* scroll-zone */
 .fltContent{
   overflow:auto;
   max-height: 52vh;
@@ -75,7 +71,6 @@
   border-radius:999px;
 }
 
-/* sections */
 .fltSection{
   margin-top:8px;
 }
@@ -87,7 +82,6 @@
   margin-bottom:8px;
 }
 
-/* chips */
 .fltChips{
   display:flex;
   flex-wrap:wrap;
@@ -118,7 +112,7 @@
   box-shadow: inset 0 0 0 2px #2f7ee6;
 }
 
-/* check rows */
+
 .fltCheckRow{
   display:flex;
   align-items:center;
@@ -133,7 +127,6 @@
   height:14px;
 }
 
-/* apply + reset */
 .fltApply{
   width:100%;
   height:36px;

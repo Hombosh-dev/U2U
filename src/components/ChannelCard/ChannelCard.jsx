@@ -43,20 +43,20 @@ const ChannelCard = ({ channel, hasLink = true }) => {
         </div>
       </div>
 
-      {/* Опис */}
-      <div className="card-description">
-        <p className="description-text">
-          {channel.description}
-        </p>
-      </div>
-
       {hasLink && (
-        <a href={channel.youtubeLink || "#"} className="card-link">
-          Переглянути інформацію
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M7 5L11 9L7 13" stroke="#4FA1ED" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-        </a>
+        <>
+          <div className="card-description">
+            <p className="description-text">
+              {channel.description}
+            </p>
+          </div>
+          <a href={channel.youtubeLink || "#"} className="card-link">
+            Переглянути інформацію
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7 5L11 9L7 13" stroke="#4FA1ED" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </a>
+        </>
       )}
     </div>
   );
