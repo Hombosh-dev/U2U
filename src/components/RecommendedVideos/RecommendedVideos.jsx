@@ -2,13 +2,10 @@ import React from 'react';
 import './RecommendedVideos.css';
 
 const RecommendedVideos = ({ channels }) => {
-  // Шукаємо канал з id="1" (Melior Max) у переданому масиві
   const sourceChannel = channels?.find(ch => ch.id === "1");
   
-  // Якщо канал є, беремо його рекомендовані відео, інакше - пустий масив
   const videos = sourceChannel?.recommendedVideos || [];
 
-  // Якщо відео немає, нічого не рендеримо
   if (videos.length === 0) return null;
 
   const handleVideoClick = (url) => {
@@ -43,7 +40,6 @@ const RecommendedVideos = ({ channels }) => {
               <div className="video-title">
                 {video.title}
               </div>
-              {/* Відображаємо subtitle, якщо він є в JSON, інакше просто title повторно або нічого */}
               {video.subtitle && (
                 <div className="video-subtitle">
                   {video.subtitle}

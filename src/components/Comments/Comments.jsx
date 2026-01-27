@@ -2,15 +2,12 @@ import React, { useState, useEffect } from 'react';
 import './Comments.css';
 
 const Comments = ({ currentChannel, currentUser }) => {
-  // Локальний стейт коментарів
   const [commentsList, setCommentsList] = useState(currentChannel?.comments || []);
   
-  // Стан для форми
   const [commentText, setCommentText] = useState('');
   const [userRating, setUserRating] = useState(0);
   const [hoverRating, setHoverRating] = useState(0);
   
-  // Стан завантаження (щоб не натискали кнопку двічі)
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
@@ -33,21 +30,17 @@ const Comments = ({ currentChannel, currentUser }) => {
 
     setIsSubmitting(true);
 
-    // 1. Створюємо об'єкт нового коментаря
     const newComment = {
-      id: Date.now(), // Унікальний ID
+      id: Date.now(), 
       user: currentUser ? currentUser.name : "Гість",
       text: commentText,
       rating: userRating,
       date: "щойно"
     };
 
-    // 2. Створюємо оновлений масив коментарів (новий + старі)
     const updatedComments = [newComment, ...commentsList];
 
     try {
-      // 3. Відправляємо PATCH запит на сервер, щоб оновити базу даних
-      // Звертаємось до конкретного каналу за ID
       const response = await fetch(`http://localhost:3001/channels/${currentChannel.id}`, {
         method: 'PATCH',
         headers: {
@@ -62,10 +55,8 @@ const Comments = ({ currentChannel, currentUser }) => {
         throw new Error('Не вдалося зберегти коментар на сервері');
       }
 
-      // 4. Якщо сервер відповів ОК, оновлюємо інтерфейс
       setCommentsList(updatedComments);
 
-      // Очищаємо форму
       setCommentText('');
       setUserRating(0);
       setHoverRating(0);

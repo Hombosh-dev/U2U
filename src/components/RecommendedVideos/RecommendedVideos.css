@@ -5,7 +5,7 @@
 }
 
 .recommended-header {
-  font-size: 32px; /* Збільшено з 24px до 32px */
+  font-size: 32px;
   font-weight: 800;
   color: #003366;
   margin-bottom: 32px;
@@ -14,27 +14,25 @@
 
 .videos-grid {
   display: grid;
-  /* Змінено minmax з 300px на 480px. Це змусить картки бути великими 
-     і займати по половині екрану (або повну ширину на мобільних) */
   grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
-  gap: 32px; /* Більший відступ між картками */
+  gap: 32px;
 }
 
 .video-card {
   background: #ffffff;
   border: 4px solid #DBEAFE; 
-  border-radius: 24px; /* Трохи більше заокруглення для великої картки */
+  border-radius: 24px;
   overflow: hidden;
   cursor: pointer;
   transition: all 0.2s ease;
-  padding: 16px; /* Більше внутрішнього відступу */
+  padding: 16px;
   display: flex;
   flex-direction: column;
 }
 
 .video-card:hover {
   border-color: #2078D4;
-  transform: translateY(-4px); /* Сильніший ефект підняття */
+  transform: translateY(-4px);
   box-shadow: 0 12px 24px rgba(32, 120, 212, 0.2);
 }
 
@@ -42,7 +40,7 @@
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 9;
-  border-radius: 16px; /* Більше заокруглення картинки */
+  border-radius: 16px;
   overflow: hidden;
   background-color: #000;
 }
@@ -58,14 +56,13 @@
   opacity: 0.9;
 }
 
-/* Стиль кнопки Play (збільшена) */
 .play-overlay {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 80px;  /* Було 64px */
-  height: 56px; /* Було 44px */
+  width: 80px;
+  height: 56px;
   background-color: rgba(220, 230, 255, 0.95);
   border-radius: 16px;
   display: flex;
@@ -83,19 +80,19 @@
 .play-icon {
   width: 0; 
   height: 0; 
-  border-top: 10px solid transparent;    /* Збільшено */
-  border-bottom: 10px solid transparent; /* Збільшено */
-  border-left: 18px solid #1a1a1a;       /* Збільшено */
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent; 
+  border-left: 18px solid #1a1a1a; 
   margin-left: 5px;
 }
 
 .video-details {
-  margin-top: 20px; /* Більший відступ від картинки до тексту */
+  margin-top: 20px; 
   padding: 0 8px;
 }
 
 .video-title {
-  font-size: 16px; /* Збільшено з 13px */
+  font-size: 16px; 
   font-weight: 800;
   color: #003366;
   text-transform: uppercase;
@@ -104,7 +101,7 @@
 }
 
 .video-subtitle {
-  font-size: 20px; /* Збільшено з 15px, щоб читалось як основний заголовок */
+  font-size: 20px;
   font-weight: 800;
   color: #003366;
   line-height: 1.4;
@@ -113,10 +110,9 @@
   overflow: hidden;
 }
 
-/* Адаптивність для мобільних телефонів */
 @media (max-width: 600px) {
   .videos-grid {
-    grid-template-columns: 1fr; /* На телефонах одна картка на всю ширину */
+    grid-template-columns: 1fr;
   }
   
   .recommended-header {
