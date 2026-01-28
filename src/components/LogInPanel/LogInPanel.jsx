@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./LogInPanel.css";
-import youtubeIcon from "../../assets/icons/youtube_3.svg"; // ✅ твій svg
+import youtubeIcon from "../../assets/icons/youtube_3.svg"; // svg asset
 
 function LogInPanel({ onLogin, onClose, onOpenRegister, isOpen = true }) {
   const [email, setEmail] = useState("");

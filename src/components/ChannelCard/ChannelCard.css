@@ -4,7 +4,8 @@
   border: 4px solid var(--blue-50);
   padding: 24px 16px 16px 16px;
   position: relative;
-  max-width: 360px;
+  max-width: none;
+  width: 100%;
   margin-top: 30px;
   box-shadow: var(--shadow-card);
   display: flex;
@@ -51,7 +52,7 @@
   opacity: 0.8;
 }
 
-/* Статистика */
+/* Statistics */
 .card-stats {
   display: flex;
   justify-content: space-between;

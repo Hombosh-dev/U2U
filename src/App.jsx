@@ -7,6 +7,8 @@ import Assistant from './components/Assistant/Assistant';
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import Channels from './pages/Channels/Channels';
+import Compilations from './pages/Compilations/Compilations';
+import Channel from './pages/Channel/Channel';
 
 import Account from './pages/Account/Account';
 
@@ -54,6 +56,8 @@ function App() {
           <Route path="/" element={<Home isAuth={isAuth} setIsAuth={setIsAuth} />} />
           <Route path="/about" element={<About />} />
           <Route path="/channels" element={<Channels />} />
+          <Route path="/compilations" element={<Compilations />} />
+          <Route path="/channel/:id" element={<Channel />} />
           <Route path="/account" element={<Account onLogout={handleLogout} />} />
         </Routes>
       </main>
