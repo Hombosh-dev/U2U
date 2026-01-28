@@ -22,11 +22,6 @@ function App() {
   const [activeModal, setActiveModal] = useState(null); // null | 'login' | 'register'
   const [aiOpen, setAiOpen] = useState(false);
 
-  const closeModals = () => {
-    setActiveModal(null);
-    setAiOpen(false);
-  };
-
   const handleLogout = () => {
     console.log('[AUTH] Logout');
     setIsAuth(false);
@@ -92,7 +87,7 @@ function App() {
         onTemplate={(t) => console.log('[AI] Template:', t)}
       />
 
-      <Assistant />
+      <Assistant isOpen={aiOpen} onToggle={() => setAiOpen(!aiOpen)} />
       <Footer />
     </div>
   );

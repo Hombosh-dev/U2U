@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useMemo, useState } from "react";
 import "./FiltersPanel.css";
 
 const DEFAULT_FILTERS = {
@@ -36,11 +36,7 @@ function FiltersPanel({
     []
   );
 
-  const [draft, setDraft] = useState(value || DEFAULT_FILTERS);
-
-  useEffect(() => {
-    if (open) setDraft(value || DEFAULT_FILTERS);
-  }, [open, value]);
+  const [draft, setDraft] = useState(() => value || DEFAULT_FILTERS);
 
   if (!open) return null;
 

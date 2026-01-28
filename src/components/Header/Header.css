@@ -134,6 +134,10 @@
     font-weight: 500;
     font-family: sans-serif;
     white-space: nowrap;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
   }
   
   .nav-link:hover {
@@ -153,6 +157,10 @@
     font-weight: 500;
     font-family: sans-serif;
     white-space: nowrap;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
   }
 
   .auth-link:hover {
