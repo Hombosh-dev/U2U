@@ -3,13 +3,28 @@ import './Assistant.css';
 
 import IdleIcon from '../../assets/icons/assistant_idle.svg';
 import OpenIcon from '../../assets/icons/assistant_open.svg';
+import AIAssistant from '../AIAssistantWindow/AIAssistant';
 
 
 const Assistant = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleOpen = () => {
-    setIsOpen(!isOpen);
+    if (!isOpen) {
+      setIsOpen(true);
+    }
+  };
+
+  const handleClose = () => {
+    setIsOpen(false);
+  };
+
+  const handleSend = (message) => {
+    console.log("Message sent:", message);
+  };
+
+  const handleTemplate = (template) => {
+    console.log("Template selected:", template);
   };
 
   return (
@@ -26,6 +41,12 @@ const Assistant = () => {
           className="assistant-icon" 
         />
       </div>
+      <AIAssistant
+        open={isOpen}
+        onClose={handleClose}
+        onSend={handleSend}
+        onTemplate={handleTemplate}
+      />
     </div>
   );
 };

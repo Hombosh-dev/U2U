@@ -1,0 +1,174 @@
+.loginOverlay{
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+  background: rgba(0,0,0,0.5);
+  z-index: 1000;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+.loginCard{
+  width: 360px;
+  max-width: 92vw;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 10px 35px rgba(15, 23, 42, 0.14);
+  position: relative;
+  padding: 18px 16px 16px;
+  box-sizing: border-box;
+}
+
+.loginClose{
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  background: transparent;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.loginCloseIcon{
+  font-size: 26px;
+  font-weight: 900;
+  color: #64748b;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.loginTitle{
+  margin: 0 0 12px;
+  font-size: 22px;
+  font-weight: 900;
+  color: #0b3a7a;
+}
+
+.loginInfoBox{
+  background: #d9ecff;
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 14px;
+}
+
+.loginInfoText{
+  font-size: 13px;
+  line-height: 1.35;
+  color: #1f3548;
+  margin-bottom: 10px;
+}
+
+.loginYoutubeBtn{
+  width: 220px;
+  height: 40px;
+  border: 0;
+  border-radius: 10px;
+  background: #e41f1f;
+  color: #fff;
+  font-weight: 900;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 14px;
+  cursor: pointer;
+}
+
+.loginYoutubeBtn:hover{ opacity: 0.95; }
+
+.loginYoutubeIcon{
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+
+.loginLabel{
+  display: block;
+  margin: 10px 0 6px;
+  font-size: 13px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.loginInput{
+  width: 100%;
+  height: 40px;
+  border-radius: 8px;
+  border: 2px solid #b6d5ff;
+  padding: 0 12px;
+  outline: none;
+  box-sizing: border-box;
+  font-size: 13.5px;
+}
+
+.loginInput:focus{
+  border-color: #2f7ee6;
+  box-shadow: 0 0 0 3px rgba(47,126,230,0.12);
+}
+
+.loginForgot{
+  margin-top: 8px;
+  border: 0;
+  background: transparent;
+  color: #0f172a;
+  font-size: 13px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.loginSocial{
+  margin-top: 14px;
+  text-align: center;
+}
+
+.loginSocialText{
+  font-weight: 800;
+  color: #0f172a;
+  opacity: 0.7;
+  margin-bottom: 10px;
+}
+
+.loginSocialBtns{
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.loginSocialBtn{
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  border: 0;
+  background: #2f7ee6;
+  color: #fff;
+  font-weight: 900;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.loginPrimaryBtn{
+  width: 100%;
+  height: 46px;
+  margin-top: 16px;
+  border: 0;
+  border-radius: 10px;
+  background: #2f7ee6;
+  color: #fff;
+  font-weight: 900;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.loginRegisterBtn{
+  width: 100%;
+  margin-top: 10px;
+  border: 0;
+  background: transparent;
+  color: #2f7ee6;
+  font-weight: 900;
+  font-size: 14px;
+  cursor: pointer;
+}

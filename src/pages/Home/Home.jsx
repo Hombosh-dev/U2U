@@ -70,7 +70,7 @@ const Home = ({ isAuth, setIsAuth }) => {
       <section className="pills-section">
         <div className="section-header">
           <h2>Тематичні добірки</h2>
-          <Link to="#">переглянути всі</Link>
+          <Link to="compilations">переглянути всі</Link>
         </div>
         <div className="pills-container">
           {categories.map(cat => <CategoryPill key={cat.id} icon={cat.icon} name={cat.name} />)}
@@ -80,7 +80,7 @@ const Home = ({ isAuth, setIsAuth }) => {
       <section className="channels-section">
         <div className="section-header">
             <h2>Ютуб-канали</h2>
-            <Link to="#">переглянути всі</Link>
+            <Link to="/channels">переглянути всі</Link>
         </div>
         <div className="tabs">
             <button 

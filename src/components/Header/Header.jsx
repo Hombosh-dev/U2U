@@ -20,7 +20,7 @@ const MenuIcon = () => (
   </svg>
 );
 
-const Header = ({ isAuth, onLogout }) => {
+const Header = ({ isAuth, onLogout, onOpenLogin, onOpenRegister, onOpenAI}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -60,8 +60,8 @@ const Header = ({ isAuth, onLogout }) => {
 
         <div className="header-right">
           <nav className="desktop-nav">
-            <Link to="#" className="nav-link">Добірки</Link>
-            <Link to="#" className="nav-link">AI помічник</Link>
+            <Link to="/compilations" className="nav-link">Добірки</Link>
+            <button type="button" className="nav-link" onClick={onOpenAI}>AI помічник</button>
             <Link to="/about" className="nav-link">Про проєкт</Link>
           </nav>
 
@@ -72,8 +72,8 @@ const Header = ({ isAuth, onLogout }) => {
           ) : (
             <>
               <div className="auth-buttons-desktop">
-                <Link to="#" className="auth-link">Вхід</Link>
-                <Link to="#" className="auth-link">Реєстрація</Link>
+                <button type="button" className="auth-link" onClick={onOpenLogin}>Вхід</button>
+                <button type="button" className="auth-link" onClick={onOpenRegister}>Реєстрація</button>
               </div>
 
               <button className="icon-btn mobile-only">
@@ -93,6 +93,7 @@ const Header = ({ isAuth, onLogout }) => {
         isAuth={isAuth}
         user={user}
         onLogout={onLogout}
+        onOpenLogin={onOpenLogin}
       />
     </>
   );
