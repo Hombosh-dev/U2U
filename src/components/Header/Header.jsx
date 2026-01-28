@@ -66,9 +66,9 @@ const Header = ({ isAuth, onLogout, onOpenLogin, onOpenRegister, onOpenAI}) => {
           </nav>
 
           {isAuth ? (
-            <div className="user-avatar">
-               <img src="https://placehold.co/40x40" alt="User" />
-            </div>
+            <Link to="/account" className="icon-btn">
+              <img src={userIconSvg} alt="Account" className="user-icon-svg" />
+            </Link>
           ) : (
             <>
               <div className="auth-buttons-desktop">
