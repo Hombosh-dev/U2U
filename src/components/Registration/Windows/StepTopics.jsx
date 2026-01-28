@@ -30,7 +30,24 @@ function StepTopics({ topics, selected, setSelected, onNext, onBack, onSkip }) {
             value={q}
             onChange={(e) => setQ(e.target.value)}
           />
-          <span className="regSearchIcon">🔍</span>
+          <span className="channels-searchIcon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M10.5 18.5C14.6421 18.5 18 15.1421 18 11C18 6.85786 14.6421 3.5 10.5 3.5C6.35786 3.5 3 6.85786 3 11C3 15.1421 6.35786 18.5 10.5 18.5Z"
+                stroke="#0F3A61"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M21 21L16.65 16.65"
+                stroke="#0F3A61"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </span>
         </div>
       </div>
 

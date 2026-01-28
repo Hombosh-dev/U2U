@@ -45,6 +45,7 @@ function Registration({ open = true, onClose = () => {}, onRegistered = () => {}
             id: String(c.id),
             name: c.name,
             meta: c.category || "",
+            avatar: c.avatar || ""
             }))
         );
         } catch (e) {

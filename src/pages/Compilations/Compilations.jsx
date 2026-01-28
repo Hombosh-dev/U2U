@@ -33,7 +33,6 @@ const Compilations = () => {
       }
     }
   }, [location.search, categories]);
-  // helper: parse numbers from strings like "45.1k", "17.4k", or plain numbers
   const parseCount = (value) => {
     if (value === null || value === undefined) return 0;
     if (typeof value === 'number') return value;

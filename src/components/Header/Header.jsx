@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css';
 import logoTwo from '../../assets/icons/logo.svg';
@@ -31,10 +31,24 @@ const Header = ({ isAuth, onLogout, onOpenLogin, onOpenRegister, onOpenAI}) => {
     setIsMenuOpen(false);
   };
 
-  const user = {
-    name: "Oleh",
-    avatar: "https://placehold.co/48x48"
-  }
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        const res = await fetch("/db.json");
+        if (!res.ok) throw new Error("Failed to fetch db.json");
+
+        const data = await res.json();
+        setUser(data.user || null);
+      } catch (e) {
+        console.error("[HEADER] Failed to load user", e);
+      }
+    };
+
+    fetchUser();
+  }, []);
+
 
   return (
     <>

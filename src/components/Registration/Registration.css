@@ -385,7 +385,11 @@
   border-radius: 999px;
   background: #e9eef8;
   flex: 0 0 auto;
+
+  object-fit: cover;
+  display: block;
 }
+
 
 .regChannelText {
   min-width: 0;
@@ -422,4 +426,14 @@
 .regScrollArea,
 .regList {
   margin-bottom: 8px;
+}
+
+.channels-searchIcon{
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: .9;
+  pointer-events: none;
+  display: inline-flex;
 }

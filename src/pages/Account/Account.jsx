@@ -1,7 +1,9 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ChannelCard from "../../components/ChannelCard/ChannelCard";
+import AddChannelForm from "../../components/AddChannelForm/AddChannelForm";
 import "./Account.css";
+import penIcon from "../../assets/icons/edit-pen-write-svgrepo-com.svg";
 
 function LogoutIcon() {
   return (
@@ -110,14 +112,25 @@ function Account({ onLogout, isAuth = true }) {
             <div className="acc-profile-info">
               <div className="acc-name-row">
                 <div className="acc-name">{name}</div>
-                <button type="button" className="acc-edit-btn" aria-label="edit name">
-                  ✎
+                <button
+                type="button"
+                className="acc-edit-btn"
+                aria-label="edit name"
+                onClick={() => console.log("[ACCOUNT] Change nickname clicked")}
+                >
+                <img src={penIcon} alt="" className="acc-edit-icon" />
                 </button>
+
               </div>
               <div className="acc-email-row">
                 <div className="acc-email">{email}</div>
-                <button type="button" className="acc-edit-btn" aria-label="edit email">
-                  ✎
+                <button
+                type="button"
+                className="acc-edit-btn"
+                aria-label="edit email"
+                onClick={() => console.log("[ACCOUNT] Change email clicked")}
+                >
+                <img src={penIcon} alt="" className="acc-edit-icon" />
                 </button>
               </div>
             </div>
@@ -158,18 +171,7 @@ function Account({ onLogout, isAuth = true }) {
         </section>
 
         {/* ADD CHANNEL (same block as Home) */}
-        <section className="add-channel-section">
-          <h2>Додати ютуб-канал</h2>
-          <p>
-            Заповніть форму, щоб запропонувати канал.{" "}
-            <strong>Увага: розглядаються лише україномовні канали, російськомовні не додаються!</strong>{" "}
-            Перевірте, чи каналу ще немає на сайті. Статус запиту можна відстежувати в акаунті. Додавання
-            безкоштовне. Дякуємо за підтримку українського контенту!
-          </p>
-          <button className="add-channel-btn" onClick={() => console.log("[ACCOUNT] Add channel clicked")}>
-            Заповнити форму
-          </button>
-        </section>
+        <AddChannelForm isAuth={isAuth} />
 
         {/* ADDED CHANNELS */}
         <section className="acc-section">

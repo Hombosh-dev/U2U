@@ -69,6 +69,9 @@
   font-size: 16px;
   padding: 4px 6px;
   line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .acc-youtube-connected{
@@ -229,4 +232,10 @@
   width: 24px;
   height: 24px;
   margin-left: auto;
+}
+
+.acc-edit-icon{
+  width: 18px;
+  height: 18px;
+  display: block;
 }

@@ -66,7 +66,7 @@ const SideMenu = ({ isOpen, isAuth, user, onClose, onLogout, onOpenLogin }) => {
               <span>Головна</span>
               <ArrowIcon />
             </Link>
-            <Link to="/collections" className="sidemenu-nav-link" onClick={onClose}>
+            <Link to="/compilations" className="sidemenu-nav-link" onClick={onClose}>
               <span>Тематичні добірки</span>
               <ArrowIcon />
             </Link>
