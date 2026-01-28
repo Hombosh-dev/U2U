@@ -1,16 +1,53 @@
-# React + Vite
+# Проєкт U2U
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**U2U: Ukrainians to Ukrainians** — простір для українців, які шукають україномовний контент, що надихає та відповідає їхнім інтересам. Після початку повномасштабного вторгнення, для багатьох українців постало питання: як відмовитися від російськомовного контенту та знайти якісну альтернативу українською? Ми створили U2U, щоб зробити цей шлях простішим і приємнішим, об'єднуючи в одному місці найкращі україномовні ресурси.
 
-Currently, two official plugins are available:
+Наш сайт призначений для молоді, яка хоче відкривати нове та унікальне. На U2U ви знайдете добірки від популярних YouTube-каналів до менш відомих, але не менш цікавих українських креаторів, що заслуговують на увагу.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Наша місія — зробити український контент більш доступним, підтримати розвиток українських контент-мейкерів і надати платформу, де кожен може знайти щось для себе. З U2U ви відкриєте, наскільки різнобарвним та цікавим є український інформаційний простір.
 
-## React Compiler
+У майбутньому ми плануємо розширити платформу і включити до неї музику, ігри українського виробництва. Ми віримо, що кожен зможе знайти вітчизняний контент для душі, відкрити нових авторів та насолодитися українською культурою.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**U2U — українці для українців. Разом ми будуємо простір для себе та про себе.**
 
-## Expanding the ESLint configuration
+## Стек технологій
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* **Фронтенд:**
+  * HTML
+  * CSS
+  * JavaScript
+  * [React](https://reactjs.org/)
+  * [React Router](https://reactrouter.com/) для маршрутизації
+* **Інструменти збірки:**
+  * [Vite](https://eslint.org/)
+
+## Учасники команди
+
+* [Гомбош Олег](https://github.com/Hombosh-dev)
+* [Косів Марта](https://github.com/Martik-k)
+* [Колодчак Богдан](https://github.com/BodiyaKol)
+
+## Як запустити проєкт
+
+1. **Клонуйте репозиторій:**
+
+   ```bash
+   git clone https://github.com/Hombosh-dev/U2U
+   ```
+2. **Перейдіть до каталогу проєкту:**
+
+   ```bash
+   cd U2U
+   ```
+3. **Встановіть залежності:**
+
+   ```bash
+   npm install
+   ```
+4. **Запустіть сервер для розробки:**
+
+   ```bash
+   npm run dev
+   ```
+5. **Відкрийте браузер і перейдіть за адресою:**
+   [http://localhost:5173](http://localhost:5173)

@@ -1,35 +1,101 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
+import Assistant from './components/Assistant/Assistant';
+
+import Home from './pages/Home/Home';
+import About from './pages/About/About';
+import Channels from './pages/Channels/Channels';
+
+import Account from './pages/Account/Account';
+
+import LogInPanel from './components/LogInPanel/LogInPanel';
+import Registration from './components/Registration/Registration';
+import AIAssistant from './components/AIAssistantWindow/AIAssistant';
+
+import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [isAuth, setIsAuth] = useState(false);
+
+  const [activeModal, setActiveModal] = useState(null); // null | 'login' | 'register'
+  const [aiOpen, setAiOpen] = useState(false);
+
+  const closeModals = () => {
+    setActiveModal(null);
+    setAiOpen(false);
+  };
+
+  const handleLogout = () => {
+    console.log('[AUTH] Logout');
+    setIsAuth(false);
+  };
+
+  const handleLogin = (payload) => {
+    console.log('[AUTH] Login (demo):', payload);
+    setIsAuth(true);
+    setActiveModal(null);
+  };
+
+  const handleRegister = (payload) => {
+    console.log('[AUTH] Register (demo):', payload);
+    setIsAuth(true);
+    setActiveModal(null);
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="App">
+      <Header
+        isAuth={isAuth}
+        onLogout={handleLogout}
+        onOpenLogin={() => setActiveModal('login')}
+        onOpenRegister={() => setActiveModal('register')}
+        onOpenAI={() => setAiOpen(true)}
+      />
+
+      <main className="main-content">
+        <Routes>
+          <Route path="/" element={<Home isAuth={isAuth} setIsAuth={setIsAuth} />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/channels" element={<Channels />} />
+          <Route path="/account" element={<Account onLogout={handleLogout} />} />
+        </Routes>
+      </main>
+
+      {/* LOGIN MODAL */}
+      {activeModal === 'login' && (
+        <LogInPanel
+          onLogin={handleLogin}
+          onClose={() => setActiveModal(null)}
+          onOpenRegister={() => {
+            console.log('[UI] Open Registration from Login');
+            setActiveModal('register');
+          }}
+        />
+      )}
+
+      {/* REGISTER MODAL */}
+      {activeModal === 'register' && (
+        <Registration
+          open={true}
+          onClose={() => setActiveModal(null)}
+          onRegistered={handleRegister}
+        />
+      )}
+
+      {/* AI MODAL */}
+      <AIAssistant
+        open={aiOpen}
+        onClose={() => setAiOpen(false)}
+        onSend={(msg) => console.log('[AI] Send:', msg)}
+        onTemplate={(t) => console.log('[AI] Template:', t)}
+      />
+
+      <Assistant />
+      <Footer />
+    </div>
+  );
 }
 
-export default App
+export default App;

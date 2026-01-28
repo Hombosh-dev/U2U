@@ -1,68 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap');
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  --blue-50: #D4E7FA;
+  --blue-100: #BBDBF8;
+  --blue-200: #9AC9F4;
+  --blue-300: #6CB1F0;
+  --blue-400: #4FA1ED;
+  --blue-500: #207CD3;
+  --blue-600: #1962A5;
+  --blue-800: #134C80;
+  --blue-900: #0F3A61;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  --red-500: #E42E21;
+  --red-600: #CF2A1E;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+  --orange-400: #FCC062;
+  --orange-500: #FBB03B;
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+  --gray-50: #EBEFF2;
+  --gray-100: #DAE0E5;
+  --gray-200: #BEC5CC;
+  --gray-300: #9DA8B2;
+  --gray-400: #828E99;
+  --gray-500: #66737F;
+  --gray-900: #1B2630;
+
+  --bg-page: #FFFFFF;
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --radius-lg: 20px;
+  --radius-full: 100px;
+  
+  --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 
 body {
+  font-family: 'Fixel Text', 'Manrope', sans-serif;
+  background-color: var(--bg-page);
+  color: var(--gray-900);
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  -webkit-font-smoothing: antialiased;
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+a {
+  text-decoration: none;
+  color: inherit;
 }
+
+.text-h1 { font-size: 24px; font-weight: 700; color: var(--blue-900); }
+.text-h2 { font-size: 22px; font-weight: 700; color: var(--blue-900); }
+.text-body { font-size: 16px; font-weight: 400; color: var(--gray-900); }
+.text-small { font-size: 14px; font-weight: 400; color: var(--gray-500); }

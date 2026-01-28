@@ -1,0 +1,145 @@
+.home-container {
+  padding: 14px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.section-header h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--blue-900);
+  margin: 0;
+}
+
+.section-header a {
+  font-size: 12px;
+  color: #4D5A66;
+  text-decoration: none;
+}
+
+.saved-channels-section {
+  background-color: var(--blue-50);
+  border-radius: var(--radius-md);
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.saved-channels-section h3 {
+  color: var(--blue-900);
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.saved-channels-content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.saved-channels-content span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 28px;
+  height: 28px;
+  background-color: var(--bg-page);
+  border-radius: 50%;
+  color: var(--blue-900);
+  font-weight: 700;
+}
+
+.pills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.channels-section {
+    padding: 24px 8px;
+}
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.tab-btn {
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  border: 2px solid var(--blue-500);
+  background-color: var(--bg-page);
+  color: var(--blue-500);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.tab-btn.active {
+  background-color: var(--blue-500);
+  color: var(--bg-page);
+}
+
+.channel-cards-container {
+    display: grid;
+    gap: 36px;
+    justify-content: center;
+}
+
+@media (min-width: 768px) {
+    .channel-cards-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (min-width: 1024px) {
+    .channel-cards-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+.add-channel-section {
+  padding: 24px 8px;
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.add-channel-section h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--blue-900);
+  margin: 0;
+}
+
+.add-channel-section p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--gray-900);
+}
+
+.add-channel-btn {
+  background-color: var(--blue-500);
+  color: var(--bg-page);
+  padding: 12px;
+  border-radius: var(--radius-sm);
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  align-self: stretch;
+}
