@@ -41,8 +41,8 @@
         { "id": 102, "user": "Булка", "text": "Файний Канал мені дуже подобається )", "rating": 5, "date": "2 місяці тому" }
       ],
       "recommendedVideos": [
-        { "id": 201, "title": "НОВИЙ СТАЛКЕР, НАРЕШТІ", "image": "https://placehold.co/160x90" },
-        { "id": 202, "title": "ОСЬ НАРЕШТІ Five Nights", "image": "https://placehold.co/160x90" }
+        { "id": 201, "title": "НОВИЙ СТАЛКЕР, НАРЕШТІ", "image": "https://img.youtube.com/vi/gvJZTFdFk1k/maxresdefault.jpg", "url": "https://www.youtube.com/watch?v=gvJZTFdFk1k" },
+        { "id": 202, "title": "ОСЬ НАРЕШТІ Five Nights", "image": "https://img.youtube.com/vi/eUCd3wOYJ-s/maxresdefault.jpg", "url": "https://www.youtube.com/watch?v=eUCd3wOYJ-s" }
       ]
     },
     {

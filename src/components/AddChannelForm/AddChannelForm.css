@@ -1,250 +1,285 @@
 :root {
-  --primary-blue: #2078D4;
-  --primary-hover: #1a62ad;
+  --u2u-blue: #2078D4;
+  --u2u-hover: #155bb5;
+  --u2u-border: #a3cffa;
+  --u2u-bg: #f0f4ff;
   --text-dark: #003366;
-  --text-gray: #333333;
-  --bg-card: #f0f4ff;
-  --radius-lg: 20px;
-  --radius-md: 12px;
-  --radius-sm: 8px;
-}
-
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 10000;
-  backdrop-filter: blur(3px);
-  padding: 20px;
-}
-
-.form-modal {
-  background: white;
-  padding: 35px;
-  border-radius: var(--radius-lg);
-  width: 100%;
-  max-width: 550px;
-  position: relative;
-  max-height: 90vh;
-  overflow-y: auto;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-  font-family: system-ui, -apple-system, sans-serif;
-}
-
-.close-btn {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background: #f0f4ff;
-  border: none;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  font-size: 20px;
-  cursor: pointer;
-  color: var(--text-dark);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.2s, transform 0.2s;
-}
-
-.close-btn:hover {
-  background: #dbeafe;
-  transform: rotate(90deg);
-}
-
-.form-title {
-  text-align: center;
-  color: var(--text-dark);
-  margin-bottom: 24px;
-  font-size: 28px;
-  font-weight: 800;
-  letter-spacing: -0.5px;
-}
-
-.form-warning {
-  background-color: #fff8e1;
-  color: #856404;
-  padding: 16px;
-  border-radius: var(--radius-md);
-  font-size: 14px;
-  margin-bottom: 24px;
-  border: 1px solid #ffeeba;
-  line-height: 1.5;
-}
-
-.add-channel-form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.form-label {
-  font-weight: 700;
-  color: var(--text-dark);
-  font-size: 14px;
-}
-
-.required {
-  color: #e74c3c;
-  margin-left: 4px;
-}
-
-.form-input {
-  padding: 12px 16px;
-  border: 2px solid #e0e8ff;
-  border-radius: var(--radius-sm);
-  font-size: 15px;
-  font-family: inherit;
-  transition: border-color 0.2s, box-shadow 0.2s;
-  color: #333;
-}
-
-.form-input:focus {
-  outline: none;
-  border-color: var(--primary-blue);
-  box-shadow: 0 0 0 4px rgba(32, 120, 212, 0.1);
-}
-
-.form-input::placeholder {
-  color: #a0aec0;
-}
-
-.submit-btn {
-  background-color: var(--primary-blue);
-  color: white;
-  border: none;
-  padding: 14px;
-  border-radius: var(--radius-md);
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: 700;
-  margin-top: 10px;
-  transition: background 0.2s, transform 0.1s;
-  width: 100%;
-}
-
-.submit-btn:hover {
-  background-color: var(--primary-hover);
-}
-
-.submit-btn:active {
-  transform: scale(0.98);
-}
-
-.submit-btn:disabled {
-  background-color: #cbd5e1;
-  cursor: not-allowed;
-  transform: none;
-}
-
-.mdxeditor-toolbar {
-  background-color: #fff !important;
-  border-bottom: 2px solid #e0e8ff !important;
-  padding: 8px !important;
-  gap: 6px;
-  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
-}
-.mdxeditor-toolbar button {
-  border-radius: 6px !important;
-}
-.mdxeditor-toolbar button:hover {
-  background-color: #f0f4ff !important;
-}
-.mdxeditor-toolbar button svg {
-  fill: var(--primary-blue) !important;
-  color: var(--primary-blue) !important;
-  width: 20px !important;
-  height: 20px !important;
-}
-.form-group > div {
-  border: 2px solid #e0e8ff !important;
-  border-radius: var(--radius-sm) !important;
-  transition: border-color 0.2s;
-}
-.form-group > div:focus-within {
-  border-color: var(--primary-blue) !important;
-  box-shadow: 0 0 0 4px rgba(32, 120, 212, 0.1);
 }
 
 .add-channel-section {
-  margin-top: 60px;
-  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+  width: 100%;
 }
 
 .add-channel-card {
-  border: none;
-  border-radius: var(--radius-md);
-  padding: 40px 32px;
+  background: transparent;
+  width: 100%;
+  max-width: 800px;
   text-align: left;
-  width: 50%;
-  min-width: 350px;
-  box-sizing: border-box;
-  font-family: system-ui, -apple-system, sans-serif;
 }
 
 .card-title {
   font-size: 24px;
-  font-weight: 800;
+  font-weight: 700;
   color: var(--text-dark);
-  margin: 0 0 20px 0;
-  letter-spacing: -0.5px;
+  margin-bottom: 16px;
 }
 
 .card-text {
   font-size: 16px;
-  color: var(--text-gray);
-  line-height: 1.6;
-  margin: 0 0 28px 0;
-}
-
-.card-text strong {
-  font-weight: 900;
-  color: #000000;
-  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  margin-bottom: 24px;
 }
 
 .card-btn {
-  padding: 14px 28px;
-  background-color: var(--primary-blue);
-  color: white;
+  background-color: var(--u2u-blue);
+  color: #fff;
   border: none;
-  border-radius: var(--radius-sm);
+  width: 100%;
+  padding: 14px;
+  border-radius: 8px;
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 600;
   cursor: pointer;
-  transition: background 0.2s, transform 0.1s;
+  transition: background 0.2s;
 }
 
 .card-btn:hover {
-  background-color: var(--primary-hover);
+  background-color: var(--u2u-hover);
 }
 
-.card-btn:active {
-  transform: scale(0.96);
+/* --- МОДАЛЬНЕ ВІКНО (Основа) --- */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Затемнення фону */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999; /* Щоб точно було поверх усього */
+  padding: 15px;
+  backdrop-filter: blur(2px);
 }
 
-@media (max-width: 768px) {
-  .add-channel-card {
-    width: 100%;
-    padding: 24px;
-  }
-  
-  .form-modal {
-    padding: 24px;
-    width: 95%;
-  }
+.form-modal {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  width: 100%;
+  max-width: 500px;
+  max-height: 90vh; /* Щоб не вилазило за екран на малих ноутах */
+  overflow-y: auto;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.25);
+  position: relative;
+}
+
+/* Заголовок і кнопка закриття */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.form-modal .form-title {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.close-icon-btn {
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #333;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  transition: color 0.2s;
+}
+.close-icon-btn:hover {
+  color: #000;
+}
+
+/* Попередження */
+.modal-warning {
+  font-size: 14px;
+  color: #111;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+/* --- ФОРМА --- */
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 6px;
+  font-size: 15px;
+  color: #333;
+}
+
+.required {
+  color: #e74c3c;
+  margin-left: 3px;
+}
+
+/* Поля вводу (Input) */
+.form-input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--u2u-border);
+  border-radius: 8px;
+  font-size: 16px;
+  box-sizing: border-box;
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--u2u-blue);
+  box-shadow: 0 0 0 3px rgba(32, 120, 212, 0.1);
+}
+
+.form-input::placeholder {
+  color: #999;
+}
+
+/* --- ВІЗУАЛЬНИЙ РЕДАКТОР (Fake Editor) --- */
+.fake-editor-container {
+  border: 1px solid var(--u2u-border);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  height: 200px; /* ФІКСОВАНА ВИСОТА - вирішує проблему зникання */
+  overflow: hidden;
+  transition: border-color 0.2s;
+  cursor: text;
+}
+
+.fake-editor-container:focus-within {
+  border-color: var(--u2u-blue);
+  box-shadow: 0 0 0 3px rgba(32, 120, 212, 0.1);
+}
+
+/* Поле редагування */
+.editor-content-editable {
+  flex-grow: 1;
+  padding: 12px;
+  overflow-y: auto;
+  outline: none;
+  font-size: 16px;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* Стилізація контенту всередині редактора (щоб H і цитати було видно) */
+.editor-content-editable h3 {
+  font-size: 1.1em;
+  font-weight: 800;
+  margin: 5px 0;
+  color: var(--text-dark);
+}
+
+.editor-content-editable blockquote {
+  border-left: 3px solid var(--u2u-blue);
+  margin: 5px 0;
+  padding-left: 10px;
+  color: #555;
+  font-style: italic;
+  background: #f9f9f9;
+}
+
+.editor-content-editable a {
+  color: var(--u2u-blue);
+  text-decoration: underline;
+}
+
+/* Placeholder (підказка "Введіть опис...") */
+.editor-content-editable:empty:before {
+  content: attr(data-placeholder);
+  color: #999;
+  display: block;
+  pointer-events: none;
+}
+
+/* Панель інструментів (Toolbar) */
+.editor-toolbar {
+  height: 42px;
+  border-top: 1px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  gap: 8px;
+  background-color: #fcfcfc;
+  flex-shrink: 0; /* Щоб панель не зникала */
+}
+
+/* Кнопки інструментів */
+.tool-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #5eaefe; /* Світло-блакитний як на скріні */
+  font-weight: bold;
+  padding: 5px 8px;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.tool-btn:hover {
+  background-color: #eef6ff;
+  color: var(--u2u-blue);
+}
+
+.tool-btn.bold { font-weight: 900; }
+.tool-btn.italic { font-style: italic; }
+.tool-btn.link { font-size: 14px; }
+
+/* --- КНОПКА ВІДПРАВКИ --- */
+.submit-btn {
+  margin-top: 10px;
+  width: 100%;
+  padding: 14px;
+  background: var(--u2u-blue);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.2s;
+}
+
+.submit-btn:hover {
+  background: var(--u2u-hover);
+}
+
+.submit-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.success-message {
+  text-align: center;
+  padding: 20px;
+}
+.success-message h2 {
+  color: var(--u2u-blue);
+  margin-bottom: 10px;
 }

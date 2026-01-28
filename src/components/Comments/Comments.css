@@ -1,3 +1,9 @@
+:root {
+  --comm-blue: #2078D4;
+  --comm-dark: #003366;
+  --comm-bg: #DBEAFE;
+}
+
 .comments-container {
   width: 50%;
   min-width: 360px;
@@ -11,6 +17,7 @@
   text-align: center; 
   margin-bottom: 40px;
   padding: 20px 0;
+  border-bottom: 1px solid #e0e0e0;
 }
 
 .rate-title {
@@ -29,22 +36,24 @@
 
 .star-icon {
   font-size: 36px;
-  color: #fbbf24;
+  color: #fbbf24; /* Жовтий */
   cursor: pointer;
   transition: transform 0.2s, color 0.2s;
+  user-select: none;
 }
 
 .star-icon.empty {
-  color: #DBEAFE; 
-  stroke: #2078D4;
-  stroke-width: 1px; 
-  color: #e5e7eb; 
+  color: #e5e7eb; /* Сірий */
+}
+.star-icon.empty-static {
+    color: #e5e7eb;
 }
 
 .star-icon:hover {
   transform: scale(1.15);
 }
 
+/* Заголовок секції */
 .comments-header {
   display: flex;
   align-items: center;
@@ -57,17 +66,19 @@
   font-weight: 800;
   color: #003366;
   letter-spacing: -0.5px;
+  margin: 0;
 }
 
 .comments-count-badge {
   background-color: #DBEAFE;
   color: #003366;
   font-weight: 700;
-  font-size: 16px;
-  padding: 4px 12px;
+  font-size: 14px;
+  padding: 4px 10px;
   border-radius: 12px;
 }
 
+/* Форма */
 .comment-form {
   display: flex;
   gap: 16px;
@@ -82,6 +93,7 @@
   flex-shrink: 0;
   border: 2px solid #fff;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  background: #eee;
 }
 
 .form-content {
@@ -90,7 +102,7 @@
 
 .comment-textarea {
   width: 100%;
-  min-height: 60px;
+  min-height: 80px;
   padding: 14px;
   border: 2px solid #DBEAFE; 
   border-radius: 12px;
@@ -101,6 +113,7 @@
   font-family: inherit;
   transition: border-color 0.2s;
   color: #003366;
+  background: #fff;
 }
 
 .comment-textarea:focus {
@@ -139,6 +152,12 @@
   transform: scale(0.98);
 }
 
+.submit-btn:disabled {
+    background-color: #9ca3af;
+    cursor: not-allowed;
+}
+
+/* Список коментарів */
 .comments-list {
   display: flex;
   flex-direction: column;
@@ -158,6 +177,7 @@
   position: relative;
 }
 
+/* Трикутничок */
 .comment-body::before {
   content: '';
   position: absolute;
@@ -194,9 +214,9 @@
 }
 
 .comment-stars {
-  font-size: 18px;
+  font-size: 16px;
   color: #fbbf24;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 }
 
 .comment-text {
@@ -204,6 +224,7 @@
   line-height: 1.5;
   color: #1e3a8a;
   margin-bottom: 12px;
+  white-space: pre-wrap; /* Щоб зберігалися переноси рядків */
 }
 
 .reply-btn {

@@ -2,6 +2,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import CategoryPill from '../../components/CategoryPill/CategoryPill';
 import ChannelCard from '../../components/ChannelCard/ChannelCard';
+import AddChannelForm from '../../components/AddChannelForm/AddChannelForm';
 import './Home.css';
 
 const Home = ({ isAuth, setIsAuth }) => {
@@ -107,11 +108,7 @@ const Home = ({ isAuth, setIsAuth }) => {
         </div>
       </section>
 
-      <section className="add-channel-section">
-        <h2>Додати ютуб-канал</h2>
-        <p>Заповніть форму, щоб запропонувати канал. <strong>Увага: розглядаються лише україномовні канали, російськомовні не додаються!</strong> Перевірте, чи каналу ще немає на сайті. Статус запиту можна відстежувати в акаунті. Додавання безкоштовне. Дякуємо за підтримку українського контенту!</p>
-        <button className="add-channel-btn">Заповнити форму</button>
-      </section>
+      <AddChannelForm isAuth={isAuth} />
 
       <div style={{
         position: 'fixed',

@@ -2,7 +2,7 @@ import React from 'react';
 import './RecommendedVideos.css';
 
 const RecommendedVideos = ({ channels }) => {
-  const sourceChannel = channels?.find(ch => ch.id === "1");
+  const sourceChannel = channels?.find(ch => ch.id === "1") || channels?.[0];
   
   const videos = sourceChannel?.recommendedVideos || [];
 
@@ -10,6 +10,7 @@ const RecommendedVideos = ({ channels }) => {
 
   const handleVideoClick = (url) => {
     if (url) {
+      console.log('[RecommendedVideos] Opening video:', url);
       window.open(url, '_blank', 'noopener,noreferrer');
     }
   };
