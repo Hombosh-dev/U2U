@@ -5,8 +5,6 @@ import StepAccount from "./Windows/StepAccount";
 import StepTopics from "./Windows/StepTopics";
 import StepChannels from "./Windows/StepChannels";
 
-const API_BASE = "http://localhost:3001";
-
 function Registration({ open = true, onClose = () => {}, onRegistered = () => {} }) {
   const [step, setStep] = useState(0);
 
@@ -26,41 +24,36 @@ function Registration({ open = true, onClose = () => {}, onRegistered = () => {}
     if (!open) return;
 
     const load = async () => {
-      try {
+        try {
         setErrorText("");
 
-        const [catsRes, chRes] = await Promise.all([
-          fetch(`${API_BASE}/categories`),
-          fetch(`${API_BASE}/channels`),
-        ]);
+        const res = await fetch("/db.json");
+        if (!res.ok) throw new Error("Не вдалось завантажити db.json");
 
-        if (!catsRes.ok || !chRes.ok) throw new Error("Не вдалось завантажити дані для реєстрації");
-
-        const cats = await catsRes.json();
-        const chs = await chRes.json();
+        const data = await res.json();
 
         setTopics(
-          (cats || []).map((c) => ({
+            (data.categories || []).map((c) => ({
             id: String(c.id),
             label: c.name,
             emoji: c.icon || "",
-          }))
+            }))
         );
 
         setChannels(
-          (chs || []).map((c) => ({
+            (data.channels || []).map((c) => ({
             id: String(c.id),
             name: c.name,
             meta: c.category || "",
-          }))
+            }))
         );
-      } catch (e) {
+        } catch (e) {
         setErrorText(e?.message || "Помилка завантаження даних");
-      }
+        }
     };
 
     load();
-  }, [open]);
+    }, [open]);
 
   const canNextStep1 =
     nickname.trim().length > 0 && email.trim().length > 0 && password.trim().length > 0;

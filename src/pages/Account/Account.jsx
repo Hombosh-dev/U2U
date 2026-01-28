@@ -3,45 +3,40 @@ import { useNavigate } from "react-router-dom";
 import ChannelCard from "../../components/ChannelCard/ChannelCard";
 import "./Account.css";
 
-const LogoutIcon = () => (
-  <svg className="acc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
-    <path d="M16 17l5-5-5-5" />
-    <path d="M21 12H9" />
-  </svg>
-);
+function LogoutIcon() {
+  return (
+    <svg className="acc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+      <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+      <path d="M16 17l5-5-5-5" />
+      <path d="M21 12H9" />
+    </svg>
+  );
+}
 
-function Account({ onLogout }) {
+function Account({ onLogout, isAuth = true }) {
+  const navigate = useNavigate();
+
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+
   const [user, setUser] = useState(null);
   const [channels, setChannels] = useState([]);
 
   const [addedTab, setAddedTab] = useState("moderation"); // moderation | added | rejected
-  const navigate = useNavigate();
+
   useEffect(() => {
-    const load = async () => {
+    const fetchData = async () => {
       try {
         setLoading(true);
         setError("");
 
         const res = await fetch("/db.json");
-        if (!res.ok) throw new Error("Не вдалося завантажити дані акаунту");
+        if (!res.ok) throw new Error("Не вдалося завантажити db.json");
 
         const data = await res.json();
 
-        const currentId = data?.session?.currentUserId;
-
-        let currentUser = null;
-        if (currentId != null) {
-          currentUser = (data.users || []).find((u) => String(u.id) === String(currentId)) || null;
-        }
-        if (!currentUser) {
-          currentUser = (data.users || [])[0] || null;
-        }
-
-        setUser(currentUser);
-        setChannels(data.channels || []);
+        setUser(data.user || null);
+        setChannels(Array.isArray(data.channels) ? data.channels : []);
       } catch (e) {
         setError(e?.message || "Помилка завантаження");
       } finally {
@@ -49,7 +44,7 @@ function Account({ onLogout }) {
       }
     };
 
-    load();
+    fetchData();
   }, []);
 
   const channelsById = useMemo(() => {
@@ -61,6 +56,7 @@ function Account({ onLogout }) {
   const savedChannelsList = useMemo(() => {
     const ids = user?.savedChannels || [];
     if (!Array.isArray(ids) || ids.length === 0) return [];
+
     return ids
       .map((id) => channelsById.get(String(id)))
       .filter(Boolean);
@@ -74,17 +70,19 @@ function Account({ onLogout }) {
       const full = channelsById.get(String(it.id));
       return {
         status: it.status || "moderation",
-        channel: full || {
-          id: String(it.id),
-          name: it.name || "Unknown",
-          category: "",
-          subscribers: "-",
-          videos: "-",
-          rating: "-",
-          description: "",
-          avatar: "https://placehold.co/60x60",
-          youtubeLink: "#",
-        },
+        channel:
+          full ||
+          {
+            id: String(it.id),
+            name: it.name || "Unknown",
+            category: "",
+            subscribers: "-",
+            videos: "-",
+            rating: "-",
+            description: "",
+            avatar: "https://placehold.co/60x60",
+            youtubeLink: "#",
+          },
       };
     });
   }, [user, channelsById]);
@@ -98,7 +96,7 @@ function Account({ onLogout }) {
   if (loading) return <div style={{ padding: 24 }}>Loading...</div>;
   if (error) return <div style={{ padding: 24 }}>Error: {error}</div>;
 
-  const name = user?.nickname || user?.name || "Бавовнятко";
+  const name = user?.name || "Бавовнятко";
   const email = user?.email || "Bavovnyatko@gmail.com";
   const avatar = user?.avatar || "https://placekitten.com/200/200";
 
@@ -112,11 +110,15 @@ function Account({ onLogout }) {
             <div className="acc-profile-info">
               <div className="acc-name-row">
                 <div className="acc-name">{name}</div>
-                <button type="button" className="acc-edit-btn" aria-label="edit name">✎</button>
+                <button type="button" className="acc-edit-btn" aria-label="edit name">
+                  ✎
+                </button>
               </div>
               <div className="acc-email-row">
                 <div className="acc-email">{email}</div>
-                <button type="button" className="acc-edit-btn" aria-label="edit email">✎</button>
+                <button type="button" className="acc-edit-btn" aria-label="edit email">
+                  ✎
+                </button>
               </div>
             </div>
           </div>
@@ -133,7 +135,7 @@ function Account({ onLogout }) {
           <button
             type="button"
             className="acc-like-row"
-            onClick={() => console.log("[ACCOUNT] Open preferences clicked")}
+            onClick={() => console.log("[ACCOUNT] Preferences clicked")}
           >
             <span className="acc-like-text">Вподобання</span>
             <span className="acc-like-arrow">›</span>
@@ -155,19 +157,16 @@ function Account({ onLogout }) {
           </div>
         </section>
 
-        {/* ADD CHANNEL */}
+        {/* ADD CHANNEL (same block as Home) */}
         <section className="add-channel-section">
           <h2>Додати ютуб-канал</h2>
           <p>
             Заповніть форму, щоб запропонувати канал.{" "}
             <strong>Увага: розглядаються лише україномовні канали, російськомовні не додаються!</strong>{" "}
-            Перевірте, чи каналу ще немає на сайті. Статус запиту можна відстежувати в акаунті.
-            Додавання безкоштовне. Дякуємо за підтримку українського контенту!
+            Перевірте, чи каналу ще немає на сайті. Статус запиту можна відстежувати в акаунті. Додавання
+            безкоштовне. Дякуємо за підтримку українського контенту!
           </p>
-          <button
-            className="add-channel-btn"
-            onClick={() => console.log("[ACCOUNT] Add channel form clicked")}
-          >
+          <button className="add-channel-btn" onClick={() => console.log("[ACCOUNT] Add channel clicked")}>
             Заповнити форму
           </button>
         </section>
@@ -218,7 +217,7 @@ function Account({ onLogout }) {
             className="acc-logout-btn"
             onClick={() => {
               console.log("[ACCOUNT] Logout clicked");
-              if (onLogout) onLogout();     // ✅ деавторизація в App
+              if (onLogout) onLogout();
               navigate("/");
             }}
           >
